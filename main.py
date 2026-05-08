@@ -1,3 +1,7 @@
+"""
+Main.py for Raspberry Pi OT Sensor app.
+"""
+
 import time
 import RPi.GPIO as GPIO
 from pymodbus.client import ModbusTcpClient
@@ -19,6 +23,7 @@ def read_sensor():
     return GPIO.input(SENSOR_PIN)
 
 def main():
+    """ Main function. """    
     if not client.connect():
         print("Failed to connect to Modbus server")
         return
